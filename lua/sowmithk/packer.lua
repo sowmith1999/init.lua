@@ -47,4 +47,8 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
+    use("github/copilot.vim")
+    use("HiPhish/rainbow-delimiters.nvim")
+    -- Inside a Lua module or directly in your packer startup function
+    -- use("sudormrfbin/cheatsheet.nvim")
 end)

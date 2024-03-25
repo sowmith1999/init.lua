@@ -32,3 +32,8 @@ vim.opt.updatetime = 50
 
 vim.g.mapleader = " "
 
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+  pattern = "*.haha",
+  command = "set filetype=racket",
+})
+
