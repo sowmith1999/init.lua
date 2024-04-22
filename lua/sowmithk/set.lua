@@ -29,11 +29,14 @@ vim.opt.isfname:append("@-@")
 vim.opt.updatetime = 50
 
 --vim.opt.colorcolumn = "80"
+vim.opt.foldcolumn = "1"
+vim.opt.foldmethod = "expr"
+vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
+vim.opt.foldlevel = 20
 
 vim.g.mapleader = " "
 
-vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
-  pattern = "*.haha",
-  command = "set filetype=racket",
+vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
+    pattern = "*.haha",
+    command = "set filetype=racket",
 })
-
