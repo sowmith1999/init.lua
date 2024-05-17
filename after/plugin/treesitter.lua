@@ -1,4 +1,19 @@
-require'nvim-treesitter.configs'.setup {
+local configs = require 'nvim-treesitter.configs'
+
+local parser_config = require 'nvim-treesitter.parsers'.get_parser_configs()
+
+parser_config.sexpr= {
+  install_info = {
+    url = "~/projects/tree-sitter-sexpr",
+    files = {"src/parser.c"},
+    -- branch = "main",
+    generate_requires_npm = false,
+    requires_generate_from_grammar = false,
+  },
+  filetype = "slog",
+}
+
+configs.setup {
 	-- A list of parser names, or "all" (the five listed parsers should always be installed)
 	ensure_installed = { "python", "javascript", "c", "lua", "vim", "vimdoc", "query", "rust" },
 
