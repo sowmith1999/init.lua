@@ -16,7 +16,12 @@ cmp.setup({
         ['<C-b>'] = cmp_action.luasnip_jump_backward(),
         ['<C-u>'] = cmp.mapping.scroll_docs(-4),
         ['<C-d>'] = cmp.mapping.scroll_docs(4),
-    })
+    }),
+    sources = cmp.config.sources({
+        { name = 'nvim_lsp' },
+        { name = 'luasnip' },
+        { name = 'nvim_lsp_signature_help' }
+    }),
 })
 
 lsp.on_attach(function(client, bufnr)
@@ -41,7 +46,7 @@ end)
 -- here you can setup the language servers
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    ensure_installed = { 'rust_analyzer' },
+    -- ensure_installed = { 'rust_analyzer' },
     handlers = {
         lsp.default_setup,
     },
