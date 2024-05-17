@@ -35,9 +35,6 @@ vim.opt.foldexpr = "nvim_treesitter#foldexpr()"
 vim.opt.foldlevel = 20
 
 vim.g.mapleader = " "
--- vim.opt.foldmethod = "expr"
--- vim.opt.foldexpr = vim.treesitter.foldexpr()
--- vim.opt.foldenable = false
 
 
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
