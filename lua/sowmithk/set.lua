@@ -36,7 +36,13 @@ vim.opt.foldlevel = 20
 
 vim.g.mapleader = " "
 
+
 vim.api.nvim_create_autocmd({ "BufRead", "BufNewFile" }, {
     pattern = "*.haha",
     command = "set filetype=racket",
 })
+vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
+  pattern = "*.slog",
+  command = "set filetype=clojure",
+})
+
