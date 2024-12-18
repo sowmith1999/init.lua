@@ -45,4 +45,14 @@ vim.api.nvim_create_autocmd({"BufRead", "BufNewFile"}, {
   pattern = "*.slog",
   command = "set filetype=clojure",
 })
-
+-- GPT:Create an autocmd for a specific file type
+vim.api.nvim_create_autocmd("FileType", {
+    pattern = "markdown", -- Replace 'markdown' with your desired filetype
+    callback = function()
+        -- Set your options here
+        vim.opt_local.textwidth = 0       -- Set textwidth to 0
+        vim.opt_local.wrapmargin = 1     -- Set wrapmargin to 1
+        vim.opt_local.formatoptions:append("t") -- Add 't' to formatoptions
+        vim.opt_local.formatoptions:remove("l") -- Remove 'l' from formatoptions
+    end,
+})

@@ -48,8 +48,17 @@ return require('packer').startup(function(use)
             require('Comment').setup()
         end
     }
-    use("github/copilot.vim")
+    -- use("github/copilot.vim")
     use("HiPhish/rainbow-delimiters.nvim")
+    use("edluffy/hologram.nvim")
     -- Inside a Lua module or directly in your packer startup function
     -- use("sudormrfbin/cheatsheet.nvim")
+    -- use {
+    --   "nvim-neorg/neorg",
+    --   rocks = { "lua-utils.nvim", "nvim-nio", "nui.nvim", "plenary.nvim", "pathlib.nvim" },
+    --   tag = "v9.1.1", -- Pin Neorg to the latest stable release
+    --   config = function()
+    --       require("neorg").setup()
+    --   end,
+    -- }
 end)

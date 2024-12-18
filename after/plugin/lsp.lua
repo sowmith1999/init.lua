@@ -53,5 +53,25 @@ require('mason-lspconfig').setup({
 })
 require 'lspconfig'.racket_langserver.setup {
     cmd = { "xvfb-run", "--auto-servernum", "racket", "--lib", "racket-langserver" },
+    -- cmd = { "racket", "--lib", "racket-langserver" },
+    -- cmd = { "racket", "-l", "racket-langserver" },
+-- racket -l racket-langserver
     -- Add any additional server-specific settings below
 }
+require 'lspconfig'.pylsp.setup{
+  settings = {
+    pylsp = {
+      plugins = {
+        pycodestyle = {
+          ignore = {'W391', 'W504'},
+          maxLineLength = 100
+        },
+        pyflakes = {enabled = false},
+        pylint = {enabled = false},
+      }
+    }
+  }
+}
+require 'lspconfig'.jsonls.setup{}
+require 'lspconfig'.asm_lsp.setup{}
+require'lspconfig'.markdown_oxide.setup{}
