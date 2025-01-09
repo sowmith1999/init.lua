@@ -51,6 +51,24 @@ return require('packer').startup(function(use)
     -- use("github/copilot.vim")
     use("HiPhish/rainbow-delimiters.nvim")
     use("edluffy/hologram.nvim")
+    use({
+        "stevearc/oil.nvim",
+        requires = {
+            {"nvim-tree/nvim-web-devicons"}
+        },
+        config = function()
+            require("oil").setup{
+                columns = {"icon"},
+                view_options = {
+                    show_hidden = true,
+                },
+            }
+
+            vim.keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory"})
+
+            vim.keymap.set("n","<space>-", require("oil").toggle_float) 
+        end
+    })
     -- Inside a Lua module or directly in your packer startup function
     -- use("sudormrfbin/cheatsheet.nvim")
     -- use {
