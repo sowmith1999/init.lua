@@ -58,7 +58,7 @@ ColorMyPencils()
 -- here you can setup the language servers
 require('mason').setup({})
 require('mason-lspconfig').setup({
-    -- ensure_installed = { 'clangd' },
+    ensure_installed = { 'clangd', 'lua_ls', 'rust_analyzer', 'jsonls', 'pylsp'},
     handlers = {
         lsp.default_setup,
     },
@@ -66,7 +66,7 @@ require('mason-lspconfig').setup({
 
 require 'lspconfig'.lua_ls.setup {}
 require 'lspconfig'.clangd.setup {
-    cmd = { '/usr/bin/clangd', "--background-index" },
+    cmd = { 'clangd', "--background-index" },
 }
 
 require 'lspconfig'.rust_analyzer.setup {
